@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class= "box">
+            <h2>To-Do-List</h2>
+            <input type="text" placeholder="Mention Here!" id="input">
+      <button onclick="add()"> ADD</button>
+            <ul id="list-container">
+                <li>
+                <button onclick="deleteItem(event)">DELETE</button>
+            </li>
+            </ul>
+            <script>
+            var ul=document.getElementById("list-container")
+            var input=document.getElementById("input")
+            function add(){
+            
+            var listitem=document.createElement("li")
+            listitem.innerHTML=input.value+"<button  onclick='deleteItem(event)'> Delete </button>"
+             ul.append(listitem)
+            }
+            function deleteItem(event)
+            {
+                event.target.parentElement.remove()
+            
+            }
+</script>            
+</body>
+</html>
